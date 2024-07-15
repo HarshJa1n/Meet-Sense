@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "3a4069dc-bf91-4825-8795-9f1e58eb88f8",
+		"name": "note-taker-poc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26017499"
+	},
+	"item": [
+		{
+			"name": "1. enroll speaker",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "num_speakers",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "names",
+							"value": "harsh",
+							"type": "text"
+						},
+						{
+							"key": "names",
+							"value": "madiha",
+							"type": "text"
+						},
+						{
+							"key": "names",
+							"value": "anuj",
+							"type": "text"
+						},
+						{
+							"key": "names",
+							"value": "taaha",
+							"type": "text"
+						},
+						{
+							"key": "audio_0",
+							"type": "file",
+							"src": "/Users/harshjain/Desktop/test/harsh_m.m4a"
+						},
+						{
+							"key": "audio_1",
+							"type": "file",
+							"src": "/Users/harshjain/Desktop/test/madiha_m.m4a"
+						},
+						{
+							"key": "audio_2",
+							"type": "file",
+							"src": "/Users/harshjain/Desktop/test/anuj_m.m4a"
+						},
+						{
+							"key": "audio_3",
+							"type": "file",
+							"src": "/Users/harshjain/Desktop/test/taaha_m.m4a"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://3b39-34-168-137-151.ngrok-free.app/enroll",
+					"protocol": "https",
+					"host": [
+						"3b39-34-168-137-151",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"enroll"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "num_speakers",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "names",
+									"value": "ankit",
+									"type": "text"
+								},
+								{
+									"key": "names",
+									"value": "vishal",
+									"type": "text"
+								},
+								{
+									"key": "audio_0",
+									"type": "file",
+									"src": "/Users/harshjain/Desktop/test/ankit.m4a"
+								},
+								{
+									"key": "audio_1",
+									"type": "file",
+									"src": "/Users/harshjain/Desktop/test/vishal.m4a"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://140a-34-87-57-251.ngrok-free.app/enroll",
+							"protocol": "https",
+							"host": [
+								"140a-34-87-57-251",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"enroll"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "84"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 03 Jul 2024 12:22:24 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.3 Python/3.10.12"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"enrolled_speakers\": [\n        \"harsh\",\n        \"vishal\"\n    ],\n    \"message\": \"Speakers enrolled successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "2. transcribe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "audio",
+							"type": "file",
+							"src": "/Users/harshjain/Desktop/test/convo.m4a"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://94b5-34-168-137-151.ngrok-free.app/transcribe",
+					"protocol": "https",
+					"host": [
+						"94b5-34-168-137-151",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"transcribe"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ankit and vishal",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "audio",
+									"type": "file",
+									"src": "/Users/harshjain/Desktop/test/convo.m4a"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://e9f5-34-143-254-202.ngrok-free.app/transcribe",
+							"protocol": "https",
+							"host": [
+								"e9f5-34-143-254-202",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"transcribe"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "897"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Jul 2024 07:27:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.3 Python/3.10.12"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transcription\": \"[0:00:00 - 0:00:01] vishal:  Good morning, everyone.\\n[0:00:02 - 0:00:03] vishal: Thank you for joining us.\\n[0:00:03 - 0:00:06] vishal: I'm excited to introduce two remarkable professionals today.\\n[0:00:08 - 0:00:13] ankit: First, we have Harsh Jain, a front-end developer at Appointee.\\n[0:00:13 - 0:00:22] ankit: Harsh has utilized NestJS TypeScript and Ant Design for multiple projects and created a scalable notification utility using NestJS.\\n[0:00:23 - 0:00:27] ankit: Outside work, Harsh enjoys conducting workshops on open source tools.\\n[0:00:29 - 0:00:33] vishal:  Next we have Vanshita Savarna, a software engineer at XYZ Corp.\\n[0:00:33 - 0:00:40] vishal: Vanshita has led the development of innovative software solutions and is known for her expertise in cloud computing and AI.\\n[0:00:41 - 0:00:43] vishal: In her free time, she loves hiking and photography.\\n\"\n}"
+				}
+			]
+		}
+	]
+}
